@@ -36,6 +36,13 @@
             labelEncrypt = new Label();
             button2 = new Button();
             button3 = new Button();
+            dataGridView1 = new DataGridView();
+            ID = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            buttonIC = new Button();
+            textBoxEncrypted = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // textBoxMessage
@@ -82,11 +89,11 @@
             // 
             // labelEncrypt
             // 
-            labelEncrypt.Location = new Point(93, 122);
+            labelEncrypt.Location = new Point(92, 122);
             labelEncrypt.Name = "labelEncrypt";
-            labelEncrypt.Size = new Size(331, 45);
+            labelEncrypt.Size = new Size(53, 19);
             labelEncrypt.TabIndex = 4;
-            labelEncrypt.Text = "label3";
+            labelEncrypt.Text = "CryptText";
             // 
             // button2
             // 
@@ -108,11 +115,63 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, Column1, Column2 });
+            dataGridView1.Location = new Point(12, 170);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(1031, 418);
+            dataGridView1.TabIndex = 6;
+            // 
+            // ID
+            // 
+            ID.HeaderText = "ID";
+            ID.Name = "ID";
+            ID.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "Column1";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Column2";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // buttonIC
+            // 
+            buttonIC.Location = new Point(590, 75);
+            buttonIC.Name = "buttonIC";
+            buttonIC.Size = new Size(171, 23);
+            buttonIC.TabIndex = 7;
+            buttonIC.Text = "IndexOfCoincedence";
+            buttonIC.UseVisualStyleBackColor = true;
+            buttonIC.Click += buttonIC_Click;
+            // 
+            // textBoxEncrypted
+            // 
+            textBoxEncrypted.Location = new Point(157, 118);
+            textBoxEncrypted.Name = "textBoxEncrypted";
+            textBoxEncrypted.Size = new Size(267, 23);
+            textBoxEncrypted.TabIndex = 8;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1055, 600);
+            Controls.Add(textBoxEncrypted);
+            Controls.Add(buttonIC);
+            Controls.Add(dataGridView1);
             Controls.Add(button3);
             Controls.Add(labelEncrypt);
             Controls.Add(button2);
@@ -123,6 +182,7 @@
             Controls.Add(textBoxMessage);
             Name = "Form1";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -137,5 +197,11 @@
         private Label labelEncrypt;
         private Button button2;
         private Button button3;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private Button buttonIC;
+        private TextBox textBoxEncrypted;
     }
 }
