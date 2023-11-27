@@ -32,16 +32,17 @@
             label1 = new Label();
             textBoxKey = new TextBox();
             label2 = new Label();
-            button1 = new Button();
+            buttonCryptMessage = new Button();
             labelEncrypt = new Label();
-            button2 = new Button();
-            button3 = new Button();
+            buttonAttackForceBrute = new Button();
+            buttonDecrypt = new Button();
             dataGridView1 = new DataGridView();
             ID = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             buttonIC = new Button();
             textBoxEncrypted = new TextBox();
+            buttonFindKeyWithMIC = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -77,43 +78,43 @@
             label2.TabIndex = 1;
             label2.Text = "Key";
             // 
-            // button1
+            // buttonCryptMessage
             // 
-            button1.Location = new Point(439, 34);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 3;
-            button1.Text = "Encrypt";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            buttonCryptMessage.Location = new Point(439, 34);
+            buttonCryptMessage.Name = "buttonCryptMessage";
+            buttonCryptMessage.Size = new Size(75, 23);
+            buttonCryptMessage.TabIndex = 3;
+            buttonCryptMessage.Text = "Encrypt";
+            buttonCryptMessage.UseVisualStyleBackColor = true;
+            buttonCryptMessage.Click += buttonCryptMessage_Click;
             // 
             // labelEncrypt
             // 
-            labelEncrypt.Location = new Point(92, 122);
+            labelEncrypt.Location = new Point(92, 163);
             labelEncrypt.Name = "labelEncrypt";
             labelEncrypt.Size = new Size(53, 19);
             labelEncrypt.TabIndex = 4;
             labelEncrypt.Text = "CryptText";
             // 
-            // button2
+            // buttonAttackForceBrute
             // 
-            button2.Location = new Point(439, 76);
-            button2.Name = "button2";
-            button2.Size = new Size(145, 23);
-            button2.TabIndex = 3;
-            button2.Text = "Decrypt_ForceBrute";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            buttonAttackForceBrute.Location = new Point(439, 76);
+            buttonAttackForceBrute.Name = "buttonAttackForceBrute";
+            buttonAttackForceBrute.Size = new Size(145, 23);
+            buttonAttackForceBrute.TabIndex = 3;
+            buttonAttackForceBrute.Text = "Attack ForceBrute";
+            buttonAttackForceBrute.UseVisualStyleBackColor = true;
+            buttonAttackForceBrute.Click += buttonAttackForceBrute_Click;
             // 
-            // button3
+            // buttonDecrypt
             // 
-            button3.Location = new Point(520, 34);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 5;
-            button3.Text = "Decrypt";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            buttonDecrypt.Location = new Point(520, 34);
+            buttonDecrypt.Name = "buttonDecrypt";
+            buttonDecrypt.Size = new Size(75, 23);
+            buttonDecrypt.TabIndex = 5;
+            buttonDecrypt.Text = "Decrypt";
+            buttonDecrypt.UseVisualStyleBackColor = true;
+            buttonDecrypt.Click += buttonDecrypt_Click;
             // 
             // dataGridView1
             // 
@@ -122,11 +123,11 @@
             dataGridView1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, Column1, Column2 });
-            dataGridView1.Location = new Point(12, 170);
+            dataGridView1.Location = new Point(12, 239);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1031, 418);
+            dataGridView1.Size = new Size(1031, 349);
             dataGridView1.TabIndex = 6;
             // 
             // ID
@@ -159,23 +160,36 @@
             // 
             // textBoxEncrypted
             // 
+            textBoxEncrypted.Anchor = AnchorStyles.None;
             textBoxEncrypted.Location = new Point(157, 118);
+            textBoxEncrypted.Multiline = true;
             textBoxEncrypted.Name = "textBoxEncrypted";
-            textBoxEncrypted.Size = new Size(267, 23);
+            textBoxEncrypted.Size = new Size(267, 115);
             textBoxEncrypted.TabIndex = 8;
+            // 
+            // buttonFindKeyWithMIC
+            // 
+            buttonFindKeyWithMIC.Location = new Point(788, 81);
+            buttonFindKeyWithMIC.Name = "buttonFindKeyWithMIC";
+            buttonFindKeyWithMIC.Size = new Size(75, 23);
+            buttonFindKeyWithMIC.TabIndex = 9;
+            buttonFindKeyWithMIC.Text = "FindKeyWithMIC";
+            buttonFindKeyWithMIC.UseVisualStyleBackColor = true;
+            buttonFindKeyWithMIC.Click += buttonFindKeyWithMIC_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1055, 600);
+            Controls.Add(buttonFindKeyWithMIC);
             Controls.Add(textBoxEncrypted);
             Controls.Add(buttonIC);
             Controls.Add(dataGridView1);
-            Controls.Add(button3);
+            Controls.Add(buttonDecrypt);
             Controls.Add(labelEncrypt);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(buttonAttackForceBrute);
+            Controls.Add(buttonCryptMessage);
             Controls.Add(label2);
             Controls.Add(textBoxKey);
             Controls.Add(label1);
@@ -193,15 +207,16 @@
         private Label label1;
         private TextBox textBoxKey;
         private Label label2;
-        private Button button1;
+        private Button buttonCryptMessage;
         private Label labelEncrypt;
-        private Button button2;
-        private Button button3;
+        private Button buttonAttackForceBrute;
+        private Button buttonDecrypt;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private Button buttonIC;
         private TextBox textBoxEncrypted;
+        private Button buttonFindKeyWithMIC;
     }
 }
